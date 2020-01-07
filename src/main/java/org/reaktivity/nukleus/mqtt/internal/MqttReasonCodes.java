@@ -57,6 +57,11 @@ public final class MqttReasonCodes
     public static final int PACKET_IDENTIFIER_IN_USE = 0x91;
     public static final int PACKET_IDENTIFIER_NOT_FOUND = 0x92;
 
+    public static final int SHARED_SUBSCRIPTIONS_NOT_SUPPORTED = 0x9E;
+
+    public static final int SUBSCRIPTION_IDENTIFIERS_NOT_SUPPORTED = 0xA1;
+    public static final int WILDCARD_SUBSCRIPTIONS_NOT_SUPPORTED = 0xA2;
+
     private MqttReasonCodes()
     {
         // Utility
