@@ -1101,7 +1101,7 @@ public final class MqttServerFactory implements StreamFactory
 
                 final int topicKey = topicKey(topicName);
                 MqttServerStream stream = streams.computeIfAbsent(topicKey, s ->
-                                                                                new MqttServerStream(newRouteId, 0, topicName));
+                                                                        new MqttServerStream(newRouteId, 0, topicName));
                 stream.addRole(MqttRole.SENDER);
                 stream.doApplicationBeginIfNecessary(traceId, authorization, affinity, topicName, 0);
                 stream.doApplicationData(traceId, authorization, MqttRole.SENDER, payload, dataEx);
@@ -1178,7 +1178,7 @@ public final class MqttServerFactory implements StreamFactory
                         final int topicKey = topicKey(topicFilter);
 
                         MqttServerStream stream = streams.computeIfAbsent(topicKey, s ->
-                                                                                        new MqttServerStream(newRouteId, packetId, topicFilter));
+                                                                        new MqttServerStream(newRouteId, packetId, topicFilter));
                         stream.addRole(RECEIVER);
                         stream.doApplicationSubscribe(subscription);
                         stream.doApplicationBeginIfNecessary(traceId, authorization, affinity, topicFilter, subscriptionId);
